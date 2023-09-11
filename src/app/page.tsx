@@ -1,5 +1,6 @@
 "use client";
 
+import Input from "@/ui/input";
 import { useSession } from "next-auth/react";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
 
   return (
     <div className="flex h-screen items-center justify-center">
-      This is a protected page.
+      <Input />
     </div>
   );
 }

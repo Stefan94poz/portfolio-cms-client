@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { NextAuthProvider } from "../lib/auth/providers";
 import i18n from "@/locales/i18n";
 import { I18nextProvider } from "react-i18next";
+import theme from "@/theme/theme";
+import { ThemeProvider } from "@mui/material";
 const inter = Inter({ subsets: ["latin"] });
 
 const metadata = {
@@ -20,7 +22,9 @@ export default function RootLayout({
     <html lang="de">
       <body className={inter.className}>
         <I18nextProvider i18n={i18n}>
-          <NextAuthProvider>{children}</NextAuthProvider>
+          <NextAuthProvider>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </NextAuthProvider>
         </I18nextProvider>
       </body>
     </html>
