@@ -1,7 +1,7 @@
 "use client";
 import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
+import { globalColors } from "./colors";
 
 export const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -10,19 +10,16 @@ export const roboto = Roboto({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
+export const globalStyles = {
+  padding: { input: "10px 12px", button: "10px 20px" },
+  borderRadius: "6px",
+  border: (size: number, color: string) => `{size} solid {color}`,
+  colors: { ...globalColors },
+};
 // Create a theme instance.
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#FF0000",
-    },
-    secondary: {
-      main: "#19857b",
-    },
-    error: {
-      main: red.A400,
-    },
-  },
+  palette: {},
+
   typography: {
     fontFamily: roboto.style.fontFamily,
   },

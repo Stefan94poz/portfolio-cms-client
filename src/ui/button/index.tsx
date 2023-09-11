@@ -1,19 +1,19 @@
 "use client";
 import * as React from "react";
 import { styled } from "@mui/system";
-import classes from "./styles.module.scss";
+import { Button as MuiButton } from "@mui/material";
+import { ButtonProps } from "@mui/material";
+import { globalStyles } from "@/theme/theme";
+import { IButton } from "@/types/ui";
 
-const MyThemeComponent = styled("div")(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-  backgroundColor: theme.palette.primary.main,
-  padding: theme.spacing(1),
-  borderRadius: theme.shape.borderRadius,
+const ButtonComponent = styled(MuiButton)((props): any => ({
+  color: props.theme.palette.primary.contrastText,
+  backgroundColor: globalStyles.colors.secondary.secondary_500_main,
+  padding: globalStyles.padding.button,
+  borderRadius: globalStyles.borderRadius,
+  width: (props: IButton) => props.fullWidth && "100%",
 }));
 
-export default function ThemeUsage() {
-  return (
-    <MyThemeComponent className={classes.test}>
-      Styled div with theme
-    </MyThemeComponent>
-  );
+export default function Button(props: any) {
+  return <ButtonComponent {...props}>{props.children}</ButtonComponent>;
 }
