@@ -15,8 +15,12 @@ export const globalColors = {
   },
   secondary: {
     white: "#FFFFFF",
-    secondary_500_main: "#178CF2",
-    gray: "#E5E7EB",
     black: "#0F141B",
+    secondary_500_main: "#178CF2",
   },
+  destructive_500_main: "#EF4444",
+  secondary_900: "#131E30",
+  neutral_200: "#E5E7EB",
+  neutral_300: "#D1D5DB",
+  neutral_500: "#6B7280",
 };

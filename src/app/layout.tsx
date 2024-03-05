@@ -6,6 +6,7 @@ import i18n from "@/locales/i18n";
 import { I18nextProvider } from "react-i18next";
 import theme from "@/theme/theme";
 import { ThemeProvider } from "@mui/material";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const metadata = {

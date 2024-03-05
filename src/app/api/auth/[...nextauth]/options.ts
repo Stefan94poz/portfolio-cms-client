@@ -64,11 +64,9 @@ export const options: NextAuthOptions = {
       }
       return Promise.resolve(token);
     },
-    // If you want to use the role in client components
     session: async ({ session, token }: any) => {
       session.token = token.token;
       session.user = token.user;
-
       return Promise.resolve(session);
     },
   },

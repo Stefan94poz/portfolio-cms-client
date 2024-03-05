@@ -1,14 +1,14 @@
 "use client";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
-import LoginForm from "../../forms/login";
+import SignUpForm from "@/components/forms/singup";
 
 // TODO remove, this demo shouldn't need to reset the theme.
-export default function LoginPage() {
+export default function SignUpPage() {
   return (
     <>
       <Grid container maxWidth={730} margin={0} direction={"column"}>
-        <LoginForm />
+        <SignUpForm />
       </Grid>
     </>
   );

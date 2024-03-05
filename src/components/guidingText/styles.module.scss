@@ -1,0 +1,14 @@
+.wrapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+  width: 100%;
+  h1 {
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+}

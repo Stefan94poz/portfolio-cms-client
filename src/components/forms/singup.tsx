@@ -14,7 +14,7 @@ const schema = z.object({
   // password: z.string().min(6),
 });
 
-export default function LoginForm() {
+export default function SignUpForm() {
   const [errors, setErrors] = useState([]);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -78,7 +78,37 @@ export default function LoginForm() {
       >
         <FormControl sx={{ marginBottom: "12px" }}>
           <Input
-            inputlabel="Email"
+            inputlabel="Company name"
+            error={!!errors?.email}
+            required
+            fullWidth
+            id="email"
+            name="email"
+            autoFocus
+            placeholder="Company name"
+            value={formData.email}
+            onChange={handleChange}
+            helpertext={(errors?.email || []).join(", ")}
+          />
+        </FormControl>
+        <FormControl sx={{ marginBottom: "12px" }}>
+          <Input
+            inputlabel="Company website"
+            error={!!errors?.email}
+            required
+            fullWidth
+            id="email"
+            name="email"
+            autoFocus
+            placeholder="Company website"
+            value={formData.email}
+            onChange={handleChange}
+            helpertext={(errors?.email || []).join(", ")}
+          />
+        </FormControl>
+        <FormControl sx={{ marginBottom: "12px" }}>
+          <Input
+            inputlabel="How many employees does your company have?"
             error={!!errors?.email}
             required
             fullWidth
@@ -86,37 +116,26 @@ export default function LoginForm() {
             name="email"
             autoComplete="email"
             autoFocus
-            placeholder="Email"
+            placeholder="How many employees does your company have?"
             value={formData.email}
             onChange={handleChange}
             helpertext={(errors?.email || []).join(", ")}
           />
         </FormControl>
-        <FormControl>
+        <FormControl sx={{ marginBottom: "12px" }}>
           <Input
-            inputlabel="Password"
+            inputlabel="Industry"
+            error={!!errors?.email}
             required
             fullWidth
-            name="password"
-            id="password"
-            placeholder="Your password"
-            autoComplete="current-password"
-            value={formData.password}
+            id="email"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            placeholder="Industry"
+            value={formData.email}
             onChange={handleChange}
-            type={showPassword ? "text" : "password"}
-            helpertext={(errors?.password || []).join(", ")}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
+            helpertext={(errors?.email || []).join(", ")}
           />
         </FormControl>
         <Button fullWidth type="submit">
